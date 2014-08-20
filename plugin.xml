@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="de.andrena.ktv.rcp.Application">
+         </run>
+      </application>
+   </extension>
+   
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="DefaultPerspective"
+            class="de.andrena.ktv.rcp.DefaultPerspective"
+            id="de.andrena.ktv.rcp.defaultperspective">
+      </perspective>
+   </extension>
+   
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            name="TableView"
+            class="de.andrena.ktv.rcp.views.TeamsTableView"
+            id="de.andrena.ktv.rcp.views.tableview">
+      </view>
+   </extension>
+   
+</plugin>
