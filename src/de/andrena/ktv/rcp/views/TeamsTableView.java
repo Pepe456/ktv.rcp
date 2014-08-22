@@ -14,7 +14,7 @@ import org.eclipse.swt.widgets.TableItem;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.part.ViewPart;
 
-import de.andrena.ktv.model.Team;
+import de.andrena.ktv.model.TeamImpl;
 import de.andrena.ktv.model.util.InputValidation;
 import de.andrena.ktv.rcp.dao.TeamDao;
 
@@ -156,7 +156,7 @@ public class TeamsTableView extends ViewPart {
 					return;
 				}
 
-				boolean successful = TeamDao.addNewTeam(new Team(teamName, player1Name, player2Name));
+				boolean successful = TeamDao.addNewTeam(new TeamImpl(teamName, player1Name, player2Name));
 				if (successful) {
 					TeamsTableView.this.refreshTable();
 					TeamsTableView.this.resetAddTeamTextFields();

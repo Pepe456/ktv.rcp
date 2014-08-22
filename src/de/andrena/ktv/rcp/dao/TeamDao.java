@@ -10,38 +10,38 @@ import com.sun.jersey.api.client.WebResource;
 import com.sun.jersey.api.client.config.ClientConfig;
 import com.sun.jersey.api.client.config.DefaultClientConfig;
 
-import de.andrena.ktv.model.Team;
+import de.andrena.ktv.model.TeamImpl;
 
 public class TeamDao {
-	private static final String SERVER_URI = "http://localhost:8080/de.andrena.ktv.server/rest/team/";
+	private static final String SERVER_URI = "http://localhost:8080/de.andrena.ktv.server/team/";
 
-	public static Team getTeam(String name) {
+	public static TeamImpl getTeam(String name) {
 
 		ClientConfig clientConfig = new DefaultClientConfig();
 		clientConfig.getClasses().add(JacksonJsonProvider.class);
 		Client client = Client.create(clientConfig);
 		WebResource resource = client.resource(SERVER_URI + "get/" + name);
-		Team team = null;
+		TeamImpl team = null;
 		try {
-			team = resource.get(Team.class);
+			team = resource.get(TeamImpl.class);
 		} catch (UniformInterfaceException e) {
 			return null;
 		}
 		return team;
 	}
 
-	public static Team[] getCurrentTeams() {
+	public static TeamImpl[] getCurrentTeams() {
 
 		ClientConfig clientConfig = new DefaultClientConfig();
 		clientConfig.getClasses().add(JacksonJsonProvider.class);
 		Client client = Client.create(clientConfig);
 		WebResource resource = client.resource(SERVER_URI + "getall");
 
-		return resource.get(new GenericType<Team[]>() {
+		return resource.get(new GenericType<TeamImpl[]>() {
 		});
 	}
 
-	public static boolean addNewTeam(Team newTeam) {
+	public static boolean addNewTeam(TeamImpl newTeam) {
 		WebResource webResource = Client.create().resource(SERVER_URI + "create");
 		String input = getJSONFString(newTeam);
 		ClientResponse response = webResource.type("application/json").post(ClientResponse.class, input);
@@ -55,7 +55,7 @@ public class TeamDao {
 		return response.getStatus() == 200 ? true : false;
 	}
 
-	private static String getJSONFString(Team team) {
+	private static String getJSONFString(TeamImpl team) {
 		return ""//
 				+ "{"//
 				+ "\"name\": \"" + team.getName() + "\"," //
