@@ -80,6 +80,8 @@ public class DefaultView extends ViewPart {
 		parent.setLayout(null);
 
 		this.tabFolder = new TabFolder(parent, SWT.NONE);
+		this.tabFolder.setBackground(SWTResourceManager.getColor(SWT.COLOR_WIDGET_BACKGROUND));
+		this.tabFolder.setForeground(SWTResourceManager.getColor(SWT.COLOR_WIDGET_BACKGROUND));
 		this.tabFolder.setBounds(0, 0, 594, 512);
 
 		this.tabTeams = new TabItem(this.tabFolder, SWT.NONE);
