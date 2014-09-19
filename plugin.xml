@@ -25,7 +25,7 @@
          point="org.eclipse.ui.views">
       <view
             name="TableView"
-            class="de.andrena.ktv.rcp.views.TeamsTableView"
+            class="de.andrena.ktv.rcp.views.DefaultView"
             id="de.andrena.ktv.rcp.views.tableview">
       </view>
    </extension>

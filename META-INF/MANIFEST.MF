@@ -6,8 +6,7 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: de.andrena.ktv.rcp.Activator
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
- org.junit,
- de.andrena.ktv.model;bundle-version="1.0.0"
+ org.junit
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .,
@@ -20,4 +19,5 @@ Bundle-ClassPath: .,
  libs/spring-core-4.0.6.RELEASE.jar,
  libs/spring-web-4.0.6.RELEASE.jar,
  libs/httpclient-4.1.1.jar,
- swing2swt.jar
+ swing2swt.jar,
+ libs/commons-logging-1.1.1.jar

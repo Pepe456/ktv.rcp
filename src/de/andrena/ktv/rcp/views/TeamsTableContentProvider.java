@@ -3,13 +3,14 @@ package de.andrena.ktv.rcp.views;
 import org.eclipse.jface.viewers.IStructuredContentProvider;
 import org.eclipse.jface.viewers.Viewer;
 
-import de.andrena.ktv.model.Team;
+import de.andrena.ktv.rcp.domain.Team;
 
 class TeamsTableContentProvider implements IStructuredContentProvider {
 
-	private final TeamsTableView ViewContentProvider;
+	@SuppressWarnings("unused")
+	private final DefaultView ViewContentProvider;
 
-	public TeamsTableContentProvider(TeamsTableView view) {
+	public TeamsTableContentProvider(DefaultView view) {
 		this.ViewContentProvider = view;
 	}
 

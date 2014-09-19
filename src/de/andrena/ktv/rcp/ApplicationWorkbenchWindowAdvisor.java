@@ -21,7 +21,7 @@ public class ApplicationWorkbenchWindowAdvisor extends WorkbenchWindowAdvisor {
 	@Override
 	public void preWindowOpen() {
 		IWorkbenchWindowConfigurer configurer = this.getWindowConfigurer();
-		configurer.setInitialSize(new Point(600, 600));
+		configurer.setInitialSize(new Point(600, 500));
 		configurer.setShowCoolBar(false);
 		configurer.setShowPerspectiveBar(false);
 		configurer.setShowStatusLine(false);
@@ -33,6 +33,6 @@ public class ApplicationWorkbenchWindowAdvisor extends WorkbenchWindowAdvisor {
 		super.postWindowCreate();
 		IWorkbenchWindowConfigurer configurer = this.getWindowConfigurer();
 		Shell shell = configurer.getWindow().getShell();
-		shell.setBounds(400, 100, 600, 500);
+		shell.setBounds(400, 100, 600, 550);
 	}
 }
